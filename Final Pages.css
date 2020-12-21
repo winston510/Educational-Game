@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(196, 215, 240);
+}
+h1 {
+    background-color:rgb(30, 92, 143);
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.score {
+    text-align: center;
+    font-size: 72px;
+    color: cadetblue;
+}
+
+.announcement {
+    text-align: center;
+    font-size: 48px;
+    color: darkolivegreen;
+}
+
+.tryAgain {
+    text-align: center;
+    font-size: 36px;
+    color: cadetblue;
+}
+
+.restartButton {
+    margin-left: 37.5%;
+    height: 50px;
+    width: 25%;
+    background-color: cadetblue;
+    border: 1px solid turquoise;
+    font-size: 24px;
+    text-align: center;
+    color: palegreen;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="Question Backgrounds.css">
+        <title>Question 3</title>
+    </head>
+
+    <script>
+        //Making the problem
+        var int1 = Math.floor(Math.random() * (11));
+        var int2 = Math.floor(Math.random() * (11));
+        var operation = Math.random();
+        var sign = " ";
+        if (operation < .33) {
+            sign =  " + ";
+        } else if (operation < .67) {
+            sign = " - ";
+        } else {
+            sign = " * ";
+        }
+        function displayProblem() {
+            document.getElementById("problem").innerHTML = int1 + sign + int2;
+        }
+
+        //Points System
+        var points = 10;
+        function correct() {
+            alert("You're correct! You've gained 15 points.");
+            points += 15;
+            document.getElementById("totalPoints").innerHTML = "Current points: " + window.points;
+        }
+        function incorrect() {
+            alert("Incorrect! You lose 5 points.");
+            points -= 5;
+            document.getElementById("totalPoints").innerHTML = "Current points: " + window.points;
+        }
+
+        //Answers for Buttons
+        function displayAnswers() {
+            if (operation < .33) {
+                document.getElementById("Wrong1").innerHTML = (int1 + int2 - 3);
+                document.getElementById("Wrong2").innerHTML = (int1 + int2 - 1);
+                document.getElementById("Wrong3").innerHTML = (int1 + int2 + 5);
+                document.getElementById("Right").innerHTML = (int1 + int2);
+            } else if (operation < .67) {
+                document.getElementById("Wrong1").innerHTML = (int1 - int2 - 1);
+                document.getElementById("Wrong2").innerHTML = (int1 - int2 + 3);
+                document.getElementById("Wrong3").innerHTML = (int1 - int2 + 1);
+                document.getElementById("Right").innerHTML = (int1 - int2);
+            } else {
+                document.getElementById("Wrong1").innerHTML = (int1 * int2 + 2);
+                document.getElementById("Wrong2").innerHTML = (int1 * int2 + 1);
+                document.getElementById("Wrong3").innerHTML = (int1 * int2 - 3);
+                document.getElementById("Right").innerHTML = (int1 * int2);
+            }
+        }
+    </script>
+
+    <body>
+        <h1>ℙ𝕣𝕠𝕘𝕣𝕖𝕤𝕤</h1>
+        <div class="container">
+          <div class="skills math40">40%</div>
+        </div>
+
+        <div class="points"><p id = "totalPoints">Current points: 10</p></div>
+        <div class="question"><p>Question 3: <span id="problem"></span></p></div>
+        
+        <button class="getQuestion" onclick="displayProblem();displayAnswers()">Get Problem</button>
+
+        <br><br>
+        
+        <button class="answerButtons" type="button" onclick="incorrect();window.location.href='Q4 5pts.html'" id="Wrong2">A</button>
+
+        <button class="answerButtons" type="button" onclick="incorrect();window.location.href='Q4 5pts.html'" id="Wrong3">B</button>
+
+        <button class="answerButtons" type="button" onclick="incorrect();window.location.href='Q4 5pts.html'" id="Wrong1">C</button>
+        
+        <button class="answerButtons" type="button" onclick="correct();window.location.href='Q4 25pts.html'" id="Right">D</button>
+    </body>
+
+</html>
